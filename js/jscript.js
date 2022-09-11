@@ -1,6 +1,5 @@
 window.onload = () => {
-
-  dog_result=document.querySelector("#dog-results")
+  dog_result=document.getElementById("dog-results")
 
   function getRandomDog(){
     fetch("https://dog.ceo/api/breeds/image/random")
@@ -14,3 +13,13 @@ window.onload = () => {
   getRandomDog()
 
 }
+const btn=document.getElementById("btn")
+let userName = ""
+
+function geta() {
+  userName = document.getElementById("user-name").value
+ 
+}
+
+//define the handlers 
+btn.addEventListener("onclick", geta)
