@@ -26,6 +26,11 @@
     height:400px;
     width:300px;
 }
+.result img {
+	object-fit: cover;
+	height:100%;
+	width:100%;
+}
 .buttons{
     display: flex;
     align-items: center;
