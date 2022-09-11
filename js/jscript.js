@@ -25,6 +25,7 @@ let getUserName = (e) => {
 
 
 }
+//fetching age and gender and nationality to a div
 function getGender(){
   fetch(`https://api.genderize.io?name=${userName}`)
   .then((response) => response.json())
@@ -44,9 +45,11 @@ function getNationality(){
 
     if (country.length==1){
         nat_id=country[0].country_id
+        national.innerHTML=nat_id
     }
     else{
         nat_id = country[0].country_id + "and his second nationality is " + country[1].country_id
+        national.innerHTML=nat_id
     }
   })
 }
@@ -57,6 +60,7 @@ function getNationality(){
 
 btn.addEventListener('click',() => {    
   getUserName()
-  getAge();
-  getGender();    
+  getAge()
+  getGender()
+  getNationality() 
 });
