@@ -20,7 +20,7 @@ let userName = ""
 let getUserName = (e) => {
   userName = document.getElementById("user-name").value
   age=document.getElementById("age")
-  gender=document.getElementById("gender")
+  gend=document.getElementById("gender")
   national=document.getElementById("national")
 
 
@@ -28,12 +28,12 @@ let getUserName = (e) => {
 function getGender(){
   fetch(`https://api.genderize.io?name=${userName}`)
   .then((response) => response.json())
-  .then((data)=> )
+  .then((data)=> gend.innerHTML=data.gender)
 }
 function getAge(){
   fetch(`https://api.agify.io/?name=${userName}`)
   .then((response) => response.json())
-  .then((data)=> show.innerHTML=data.age)
+  .then((data)=> age.innerHTML=data.age)
 }
 function getNationality(){
   fetch(`https://api.nationalize.io/?name=${userName}`)
